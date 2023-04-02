@@ -52,7 +52,9 @@ void Painter::jumpBackward(int numPixel)
 void Painter::turnLeft(double degree)
 {
     // TODO: rotate left the painter
-    setAngle(this->angle - degree);
+    double ang = this->angle + degree;
+    if(ang>360) ang-=360;
+	setAngle(ang);
 }
 
 
