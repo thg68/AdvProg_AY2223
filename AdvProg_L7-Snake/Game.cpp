@@ -115,10 +115,11 @@ void Game::processUserInput(Direction direction)
  *
  ***/
 bool Game::canChange(Direction current, Direction next) const {
-	if (current == UP || current == DOWN)
-		return 0; // YOUR CODE HERE
-
-	return (current!=UP && next==DOWN)||(current!=DOWN && next==UP)||(current!=LEFT && next==RIGHT)||(current!=RIGHT && next==LEFT);
+	if ( (current == UP || current == DOWN) && (next == UP || next == DOWN ) )
+		return false; // YOUR CODE HERE
+	if( (current ==LEFT	|| current == RIGHT) && (next == LEFT || next == RIGHT ) )
+		return false;
+	return true;// YOUR CODE HERE
 }
 
 
